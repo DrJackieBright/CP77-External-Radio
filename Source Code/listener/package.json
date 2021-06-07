@@ -1,0 +1,16 @@
+{
+  "name": "listener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "relay rewrite.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "node-media-controller": "0.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
