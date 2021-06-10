@@ -1,0 +1,27 @@
+{
+  "name": "listener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "relay.js",
+  "bin": "relay.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "node-media-controller": "0.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start js": "node relay.js",
+    "start js exe": "..\\relay.exe",
+    "compile js": "pkg . -o ..\\relay.exe",
+    "start ahk": "AutoHotkey keyoverride.ahk",
+    "start ahk exe": "..\\keyoverride.exe",
+    "compile ahk": "..\\AHKCompiler\\Ahk2Exe /in keyoverride.ahk /out ..\\keyoverride.exe /icon ..\\icon.ico"
+  },
+  "pkg": {
+    "targets": [
+      "node14-win-x64"
+    ]
+  },
+  "author": "J Bright",
+  "license": "MIT"
+}
