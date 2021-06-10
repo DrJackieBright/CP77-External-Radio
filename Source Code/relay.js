@@ -4,7 +4,7 @@ console.log = function (params) {
 }
 
 const fs = require('fs');
-const mediaController = require('node-media-controller');
+const robot = require("robotjs")
 
 const file = (function() {
   let ret 
@@ -59,15 +59,9 @@ fs.watch(file, (event, filename) => {
     boolPrevious = boolCurrent;
     console.log(`${filename} file Changed to ${boolCurrent}`);
     if (boolCurrent) {
-      mediaController.executeCommand('play', (err, res) => {
-        if (err) console.dir(err);
-        if (res) console.dir(res);
-      })
+      robot.keyTap("audio_play")
     } else {
-      mediaController.executeCommand('pause', (err, res) => {
-        if (err) console.dir(err);
-        if (res) console.dir(res);
-      })
+      robot.keyTap("audio_pause")
     }
   }
 });
