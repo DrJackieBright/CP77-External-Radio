@@ -49,20 +49,26 @@ function search() {
   }
 }
 
-let boolPrevious = null;
+let previous = {};
+
+try {previous = JSON.parse(fs.readFileSync(file).toString())}
+catch {return}
+
 fs.watch(file, (event, filename) => {
   if (filename) {
-    let boolCurrent = null
-    try {boolCurrent = JSON.parse(fs.readFileSync(file).toString()).value}
+    let current = null
+    try {current = JSON.parse(fs.readFileSync(file).toString())}
     catch {return}
-    if (boolCurrent === boolPrevious) return
-    boolPrevious = boolCurrent;
-    console.log(`${filename} file Changed to ${boolCurrent}`);
-    if (boolCurrent) {
-      robot.keyTap("audio_play")
-    } else {
-      robot.keyTap("audio_pause")
+    if (current.enabled != previous.enabled)
+      console.log(`Sender ${(current.enabled)?"Enabled":"Disabled"}`)
+    if (current.mode != previous.mode)
+      console.log("Mode switching is not yet supported")
+    if (current.value != previous.value) {
+      console.log(`Playing status changed to ${current.value}`);
+      if (current) robot.keyTap("audio_play")
+      else robot.keyTap("audio_pause")
     }
+    previous = current;
   }
 });
 

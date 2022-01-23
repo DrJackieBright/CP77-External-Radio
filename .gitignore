@@ -1,5 +1,5 @@
 /.vscode
-RadioStatus.log
+RadioStatus*.log
 workspace.code-workspace
 db.sqlite3
 Source Code/node_modules
