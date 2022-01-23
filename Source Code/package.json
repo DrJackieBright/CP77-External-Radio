@@ -11,12 +11,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node relay.js",
-    "start-js": "node relay.js",
-    "start-js-exe": "..\\relay.exe",
-    "compile-js": "pkg . -o ..\\relay.exe",
-    "start-ahk": "AutoHotkey keyoverride.ahk",
-    "start-ahk-exe": "..\\keyoverride.exe",
-    "compile-ahk": "..\\AHKCompiler\\Ahk2Exe /in keyoverride.ahk /out ..\\keyoverride.exe /icon ..\\icon.ico"
+    "compile": "pkg . -o ..\\relay.exe",
+    "start-compiled": "..\\relay.exe"
   },
   "pkg": {
     "targets": [

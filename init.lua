@@ -3,15 +3,18 @@ local value = {value = false, mode = 0, enabled = true}
 local showUI = false
 
 registerForEvent("onInit", function()
+    -- load and print inital state of output.json
     local f = io.open("output.json", "r")
     value = json.decode(f:read())
     f:close()
-
     print(json.encode(value))
 
+    -- Check vehicle status and trigger Export()
     GameUI.OnVehicle(function(state)
-        value.value = state.isVehicle
-        Export()
+        if (value.enabled) then
+            value.value = state.isVehicle
+            Export()
+        end
     end)
 
     print("radio reporter loaded")

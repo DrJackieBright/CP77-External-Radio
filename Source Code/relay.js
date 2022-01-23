@@ -1,3 +1,8 @@
+/*jshint esversion: 10 */ 
+
+/**
+ * modifies console.log to prepend a timestamp
+ */
 let oldLog = console.log
 console.log = function (params) {
   oldLog("[" + new Date().toLocaleTimeString() + "]", params)
@@ -6,6 +11,10 @@ console.log = function (params) {
 const fs = require('fs');
 const robot = require("robotjs")
 
+/**
+ * contains the link to the output file as a string
+ * @constant
+ */
 const file = (function() {
   let ret 
   if (process.argv[1].endsWith(__filename)) {
@@ -24,6 +33,11 @@ const file = (function() {
   return ret
 })()
 
+/**
+ * Attempts to locate the output.json file in the present directory, and the next two directories up
+ * 
+ * @returns the url of output.json as a string
+ */
 function search() {
   console.log("searching for file.")
   try{
@@ -49,6 +63,9 @@ function search() {
   }
 }
 
+/**
+ * Contains the previous state of {@link file}
+ */
 let previous = {};
 
 try {previous = JSON.parse(fs.readFileSync(file).toString())}
