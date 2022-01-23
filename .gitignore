@@ -1,6 +1,2 @@
-/.vscode
-RadioStatus*.log
-workspace.code-workspace
-db.sqlite3
-Source/node_modules
+node_modules
 *.zip
