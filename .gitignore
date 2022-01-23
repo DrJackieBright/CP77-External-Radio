@@ -2,4 +2,5 @@
 RadioStatus*.log
 workspace.code-workspace
 db.sqlite3
-Source Code/node_modules
+Source/node_modules
+*.zip

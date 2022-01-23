@@ -1,0 +1,28 @@
+{
+  "name": "cp77-external-radio",
+  "version": "1.0.0",
+  "description": "Triggers external media player (such as Spotify or VLC) when entering and exiting cars",
+  "homepage": "This will link to nexus mods once uploaded",
+  "author": "J Bright",
+  "license": "MIT",
+  "main": "relay.js",
+  "bin": "relay.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "robotjs": "^0.6.0"
+  },
+  "devDependencies": {
+    "pkg": "5.5.2"
+  },
+  "scripts": {
+    "start": "node relay.js",
+    "compile": "pkg . -o relay.exe",
+    "start-compiled": "relay.exe",
+    "make-zips": "echo Compressing Release && tar -cavf RadioStatus.zip init.lua GameUI.lua output.json relay.exe readme.md && echo compressing source && tar -cavf SourceCode.zip init.lua GameUI.lua output.json readme.md relay.js package.json package-lock.json"
+  },
+  "pkg": {
+    "targets": [
+      "node14-win-x64"
+    ]
+  }
+}
