@@ -16,9 +16,9 @@
   },
   "scripts": {
     "start": "node relay.js",
-    "compile": "pkg . -o relay.exe",
-    "start-compiled": "relay.exe",
-    "make-zips": "echo Compressing Release && tar -cavf RadioStatus.zip init.lua GameUI.lua output.json relay.exe readme.md && echo compressing source && tar -cavf SourceCode.zip init.lua GameUI.lua output.json readme.md relay.js package.json package-lock.json"
+    "compile": "pkg . -o .\\bin\\x64\\plugins\\cyber_engine_tweaks\\mods\\cp77-External-Radio\\relay.exe",
+    "start-compiled": ".\\bin\\x64\\plugins\\cyber_engine_tweaks\\mods\\cp77-External-Radio\\relay.exe",
+    "make-zips": "tar -cavf RadioStatus.zip bin\\x64\\plugins\\cyber_engine_tweaks\\mods\\cp77-External-Radio\\*"
   },
   "pkg": {
     "targets": [
