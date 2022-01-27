@@ -11,6 +11,9 @@ console.log = function (params) {
 const fs = require('fs');
 const robot = require("robotjs")
 
+
+console.log("Cyberpunk 2077 External Radio - version " + JSON.parse(fs.readFileSync('package.json', 'utf8')).version)
+
 /**
  * contains the link to the output file as a string
  * @constant
