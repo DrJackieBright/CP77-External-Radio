@@ -1,3 +1,8 @@
+# This repo has been archived
+This was never properly designed for the end user and was full of bugs and possible security issues  
+I've completely rewritten this mod from the ground up and I reccomend that version instead  
+The rewrite is available at [DrJackieBright/CP77-External-Radio-red4ext](https://github.com/DrJackieBright/CP77-External-Radio-red4ext)  
+
 # [ Cyberpunk 2077 External Radio ]
 
 This is the simplest and most versatile solution I could find for a radio replacer.
